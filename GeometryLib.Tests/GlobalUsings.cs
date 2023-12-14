@@ -1,2 +1,2 @@
 global using Xunit;
-global using GeometryLib;
+global using GeometryLib.Figures;
