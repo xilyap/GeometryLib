@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeometryLib.Figures.Abstract
 {
+
     public interface IFigure
     {
         public double GetArea();
