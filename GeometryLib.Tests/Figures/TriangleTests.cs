@@ -12,7 +12,7 @@ namespace GeometryLib.Tests.Figures
 		[MemberData(nameof(TrianglePerAreaData))]
 		public void ReturnSingleTriangleCorrectArea(double x1, double x2, double x3, double expected)
 		{
-			var area = new Triangle(x1, x2, x3).GetArea();
+			var area = new Triangle(x1, x2, x3).Area;
 			Assert.Equal(expected, area, 2);
 		}
 
@@ -20,7 +20,7 @@ namespace GeometryLib.Tests.Figures
 		[MemberData(nameof(TrianglePerPerimeterData))]
 		public void ReturnSingleTriangleCorrectPerimeter(double x1, double x2, double x3, double expected)
 		{
-			var perimeter = new Triangle(x1, x2, x3).GetPerimeter();
+			var perimeter = new Triangle(x1, x2, x3).Perimeter;
 			Assert.Equal(expected, perimeter, 2);
 		}
 
@@ -35,7 +35,15 @@ namespace GeometryLib.Tests.Figures
 		[Fact]
 		public void ShouldThrowIncorrectTriangle()
 		{
-			Assert.Throws<ArgumentException>(() => new Triangle(-1, -1, 1));
+			Assert.Throws<ArgumentException>(() => new Triangle(1, 7, 1));
+		}
+
+		[Fact]
+		public void ShouldThrowEdgesOutOfRange()
+		{
+			Assert.Throws<ArgumentOutOfRangeException>(() => new Triangle(-1, 7, 1));
+			Assert.Throws<ArgumentOutOfRangeException>(() => new Triangle(1, -7, 1));
+			Assert.Throws<ArgumentOutOfRangeException>(() => new Triangle(1, 7, -1));
 		}
 
 		public static IEnumerable<object[]> TrianglePerAreaData()

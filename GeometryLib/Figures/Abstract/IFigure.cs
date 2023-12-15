@@ -9,8 +9,8 @@ namespace GeometryLib.Figures.Abstract
 
     public interface IFigure
     {
-        public double GetArea();
+        public double Area { get; }
 
-        public double GetPerimeter();
-    }
+        public double Perimeter { get; }
+	}
 }
