@@ -8,7 +8,7 @@ namespace GeometryLib.Tests.Figures
 			new Circle( 5),
 			new Circle(16),
 			new Circle(18),
-			 new Circle(11),
+			new Circle(11),
 			new Circle(4),
 			new Circle(6),
 			new Triangle(20, 20, 20),
