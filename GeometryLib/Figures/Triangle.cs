@@ -8,6 +8,9 @@ using GeometryLib.Figures.Abstract;
 
 namespace GeometryLib.Figures
 {
+	/// <summary>
+	/// Класс треугольника. Иммутабельный. Предназначен для оценки любого треугольника по трём имеющимся сторонам.
+	/// </summary>
 	public class Triangle : IFigure
 	{
 		private double _area;

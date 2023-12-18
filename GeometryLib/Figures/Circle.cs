@@ -7,6 +7,9 @@ using GeometryLib.Figures.Abstract;
 
 namespace GeometryLib.Figures
 {
+	/// <summary>
+	/// Класс круга. Иммутабельный. Предназначен для оценки длины и площади любого круга.
+	/// </summary>
 	public class Circle : IFigure
 	{
 		private double _area;
