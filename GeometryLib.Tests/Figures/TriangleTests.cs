@@ -29,7 +29,7 @@ namespace GeometryLib.Tests.Figures
 		public void ReturnTriangleRight(double x1, double x2, double x3, bool expected)
 		{
 			var triangle = new Triangle(x1, x2, x3);
-			Assert.Equal(expected, triangle.isRight());
+			Assert.Equal(expected, triangle.IsRight);
 		}
 
 		[Fact]

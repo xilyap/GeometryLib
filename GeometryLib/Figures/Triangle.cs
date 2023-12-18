@@ -13,6 +13,7 @@ namespace GeometryLib.Figures
 		private double _area;
 
 		private double _perimeter;
+		private bool _isRight;
 
 		public Triangle(double edgeA, double edgeB, double edgeC)
 		{
@@ -30,6 +31,10 @@ namespace GeometryLib.Figures
 
 				var halfP = _perimeter / 2;
 				_area = Math.Sqrt(halfP * (halfP - EdgeA) * (halfP - EdgeB) * (halfP - EdgeC));
+
+				List<double> items = new List<double>() { EdgeA * EdgeA, EdgeB * EdgeB, EdgeC * EdgeC };
+				items.Sort();
+				_isRight = items[2] == items[1] + items[0];
 			}
 			else
 				throw new ArgumentException("Введённый треугольник не может существовать!");
@@ -41,11 +46,14 @@ namespace GeometryLib.Figures
 		public double EdgeB { get; }
 		public double EdgeC { get; }
 
-		public bool isRight()
+		public bool IsRight
 		{
-			List<double> items = new List<double>() { EdgeA * EdgeA, EdgeB * EdgeB, EdgeC * EdgeC };
-			items.Sort();
-			return items[2] == items[1] + items[0];
+			get
+			{
+				List<double> items = new List<double>() { EdgeA * EdgeA, EdgeB * EdgeB, EdgeC * EdgeC };
+				items.Sort();
+				return items[2] == items[1] + items[0];
+			}
 		}
 	}
 }
